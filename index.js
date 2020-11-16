@@ -41,9 +41,14 @@ app.use((req, res, next)=>{
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
 
-app.get('/', (req, res) => {
-    
-    res.render('home')
+app.get('/', isLoggedIn, (req, res) => {
+    const jokeUrl = 'https://official-joke-api.appspot.com/random_joke'
+    axios.get(jokeUrl)
+        .then(response => {
+            const joke = response.data
+            res.render('home', {joke: joke})
+        console.log('ccccccccccc', response.data)
+    })
 })
 
 app.get('/profile', isLoggedIn, (req, res)=>{
