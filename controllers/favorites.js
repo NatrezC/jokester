@@ -4,13 +4,13 @@ const db = require('../models')
 
 router.post('/', (req, res) => {
     db.joke.findOrCreate({
-        where: { setup: req.body.setup, punchline: req.body.punchline, userId: req.body.id },
+        where: { setup: req.body.setup, punchline: req.body.punchline},
         include: [db.user]
     })
         .then(([foundOrCreatedJoke, created]) => {
-            foundOrCreatedPet.addUser(req.user)
+            foundOrCreatedJoke.addUser(req.user)
             .then(createdRelation => {
-            res.redirect('/favorites')
+            res.render('favorites', {joke: foundOrCreatedJoke})
         })
         }).catch(err => {
             console.log('this is wrong in fav post',err)

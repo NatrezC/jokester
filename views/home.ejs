@@ -8,7 +8,8 @@
         <input type="submit" value="Click">
     </form>
     <form action='/favorites' method="POST">
-        <input hidden type ="text" name="name" value="<%=joke.setup %> <%= joke.punchline %> ">
+        <input hidden type ="text" name="setup" value="<%=joke.setup %>">
+        <input hidden type ="text" name="punchline" value="<%=joke.punchline%>">
         <input type="submit" value="Add to favorite">
     </form>
 </div>
