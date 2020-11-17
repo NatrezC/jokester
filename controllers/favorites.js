@@ -10,7 +10,8 @@ router.post('/', (req, res) => {
         .then(([foundOrCreatedJoke, created]) => {
             foundOrCreatedJoke.addUser(req.user)
             .then(createdRelation => {
-            res.render('favorites', {joke: foundOrCreatedJoke})
+            //res.render('favorites', {joke: foundOrCreatedJoke})
+            res.redirect('/favorites')
         })
         }).catch(err => {
             console.log('this is wrong in fav post',err)

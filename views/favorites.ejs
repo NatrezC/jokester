@@ -1,6 +1,6 @@
 <h2><%= currentUser.name %>'s Jokes </h2>
 
-<% joke.forEach(j=>{ %>
+<% favJokes.forEach(j=>{ %>
     <h3><%= j.setup %></h3>
     <h3><%= j.punchline %> </h3>
 <% }) %>
