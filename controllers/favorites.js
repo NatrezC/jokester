@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
             foundOrCreatedJoke.addUser(req.user)
             .then(createdRelation => {
             //res.render('favorites', {joke: foundOrCreatedJoke})
-            res.redirect('/favorites')
+                res.redirect('/favorites')
         })
         }).catch(err => {
             console.log('this is wrong in fav post',err)
@@ -28,6 +28,22 @@ router.get('/', (req, res) => {
         // console.log(foundUser.pets)
         res.render('favorites', { favJokes: foundUser.jokes })
     })
-    console.log('dddddd', req.user)
+    //console.log('dddddd', req.user)
 });
+
+//delete route
+router.delete('/:id', (req, res) => {
+    db.userjoke.destroy({
+        where: { id: req.params.id }
+    })
+    .then(idDelete => {
+        console.log(idDelete)
+        res.redirect('/favorites')
+    }).catch(err => {
+        res.send(err)
+    })
+})
+
+
+
 module.exports = router;
