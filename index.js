@@ -45,6 +45,11 @@ app.use((req, res, next)=>{
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/favorites', require('./controllers/favorites'))
+app.use('/comments', require('./controllers/comments'))
+
+// use for styling
+app.use(express.static(__dirname + '/public'))
+app.use(express.static('public'))
 
 app.get('/', isLoggedIn, (req, res) => {
     const jokeUrl = 'https://official-joke-api.appspot.com/random_joke'

@@ -1,0 +1,11 @@
+<h3> Notes: </h3>
+
+<div>
+    <% newComment.forEach(c=>{ %>
+        <p><%= c.comment %></p> <br>
+        <b> Note Created: </b> <%= c.createdAt %><br>
+        <b> Last Update: </b> <%= c.updatedAt %>
+    <% }) %> 
+</div>
+
+<a id="return2" href="/favorites">&larr; Return to View Your Favorites</a>

@@ -6,5 +6,13 @@
     <form method="POST" action="/favorites/<%=j.id%>/?_method=DELETE">
         <input id="delete" type="submit" value="Delete">
     </form>
+    <form method="POST" action="/favorites/<%=j.id%>/?_method=PUT">
+        <label for="comments">WRITE A NOTE</label>
+        <textarea id="comments" type="text" name="comments"></textarea>
+        <br>
+        <button class="btn-primary" id="button" type="submit">Submit</button>
+        <a id="seeComments" href="/comments/<%=j.id%>"> See note</a>
+    </form>
+    </div>
 <% }) %>
 

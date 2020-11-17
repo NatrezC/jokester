@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
+const { route } = require('./auth')
 
 router.post('/', (req, res) => {
     db.joke.findOrCreate({
@@ -18,7 +19,7 @@ router.post('/', (req, res) => {
         })
 })
 
-//GET /favorites - return a page with favorited animals
+//GET favorites route
 router.get('/', (req, res) => {
     db.user.findOne({
     where: {id: req.user.id},
@@ -42,6 +43,18 @@ router.delete('/:id', (req, res) => {
     }).catch(err => {
         res.send(err)
     })
+})
+
+router.put('/:id', (req, res) => {
+    db.userjoke.update({
+        comment: req.body.comment
+    },
+        {
+            where: { userId: req.user.id, jokeId: req.params.id }
+        }).then(newComment => {
+            console.log("this is my comment", newComment)
+            res.redirect(`/comments/${req.params.id}`)
+        })
 })
 
 
