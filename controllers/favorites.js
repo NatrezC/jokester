@@ -1,9 +1,10 @@
 const express = require('express')
+const isLoggedIn = require('../middleware/isLoggedIn')
 const router = express.Router()
 const db = require('../models')
 const { route } = require('./auth')
 
-router.post('/', (req, res) => {
+router.post('/', isLoggedIn, (req, res) => {
     db.joke.findOrCreate({
         where: { setup: req.body.setup, punchline: req.body.punchline},
         include: [db.user]
@@ -20,7 +21,7 @@ router.post('/', (req, res) => {
 })
 
 //GET favorites route
-router.get('/', (req, res) => {
+router.get('/', isLoggedIn, (req, res) => {
     db.user.findOne({
     where: {id: req.user.id},
         include: [db.joke]
@@ -33,7 +34,7 @@ router.get('/', (req, res) => {
 });
 
 //delete route
-router.delete('/:id', (req, res) => {
+router.delete('/:id', isLoggedIn, (req, res) => {
     db.userjoke.destroy({
         where: { id: req.params.id }
     })
@@ -45,14 +46,12 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-router.put('/:id', (req, res) => {
-    db.userjoke.update({
-        comment: req.body.comment
-    },
+router.put('/:id', isLoggedIn, (req, res) => {
+    db.userjoke.update({ comment: req.body.comment},
         {
             where: { userId: req.user.id, jokeId: req.params.id }
         }).then(newComment => {
-            console.log("this is my comment", newComment)
+            console.log("Comment here===>>>>", newComment)
             res.redirect(`/comments/${req.params.id}`)
         })
 })

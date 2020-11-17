@@ -4,12 +4,12 @@ const db = require('../models')
 const { route } = require('./auth')
 
 router.get('/:jokeId', (req, res) => {
-    console.log('right here ===>', req.params.id)
-    db.userjoke.findOne({
+    db.userjoke.create({
         where: {userId: req.user.id, jokeId: req.params.jokeId}
     })
-        .then(foundComment => {
+    .then(foundComment => {
         res.render('comments', {comment: foundComment.dataValues})
+        console.log('comment here ===>', comment)
     })
 })
 

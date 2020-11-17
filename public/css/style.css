@@ -1,0 +1,87 @@
+body{
+    /* background-image: url('https://images7.alphacoders.com/101/1017006.png'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    background-image: url('https://image.freepik.com/free-vector/laughing-emoji-social-media-message-background-copy-space_95169-1323.jpg');
+}
+
+header{
+    background-image: url('https://images7.alphacoders.com/101/1017006.png');
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 5vh;
+    font-weight: bolder;
+    color: white;
+    font-family: 'Petit Formal Script', cursive;
+    position: fixed;
+}
+.form-container{
+    position: center;
+    top: 15vh;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+    
+}
+
+a:link{
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited{
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover{
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.buttons{
+    list-style-type: none;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
+}
+li{
+    color: white;
+}
+.upload{
+    display: flex;
+    justify-content: center;
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+h3{
+    display:flex;
+    justify-content:center;
+    font-weight: bold;
+}
