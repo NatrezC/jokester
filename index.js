@@ -40,6 +40,7 @@ app.use((req, res, next)=>{
 
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
+app.use('/favorites', require('./controllers/favorites'))
 
 app.get('/', isLoggedIn, (req, res) => {
     const jokeUrl = 'https://official-joke-api.appspot.com/random_joke'

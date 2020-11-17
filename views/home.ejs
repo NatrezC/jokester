@@ -3,7 +3,12 @@
 <h4><%= joke.type %> </h4>
 <h3><%= joke.setup %> </h3>
 <h3><%= joke.punchline %> </h3>
-<form action="/" method="GET">
-    <input type="submit" value="Click">
-
-</form>
+<div class="clickAdd">
+    <form action="/" method="GET">
+        <input type="submit" value="Click">
+    </form>
+    <form action='/favorites' method="POST">
+        <input hidden type ="text" name="name" value="<%=joke.setup %> <%= joke.punchline %> ">
+        <input type="submit" value="Add to favorite">
+    </form>
+</div>
