@@ -11,11 +11,11 @@
                 </button>
             </form>
             <form method="POST" action="/favorites/<%=j.id%>/?_method=PUT">
-                <label for="comments">good or bad joke</label>
-                <textarea id="comments" type="text" name="comments"></textarea>
+                <label for="comments">good or bad joke?</label>
+                <textarea id="comment" type="text" name="comment"></textarea>
                 <br>
-                <button class="btn-primary" id="button" type="submit">Submit</button>
-                <a id="seeComments" href="/comments/<%=j.id%>"> See note</a>
+                <button class="btn-primary" id="comment" type="submit">Submit</button>
+                
             </form>
     <% }) %>
 </div>

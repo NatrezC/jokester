@@ -21,7 +21,7 @@ h1{
     margin: 5vh;
     font-weight: bolder;
     color: white;
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Bangers', cursive;
     position: fixed;
 }
 .form-container{
@@ -84,4 +84,8 @@ h3{
     display:flex;
     justify-content:center;
     font-weight: bold;
+}
+
+#backFave{
+    font-size: 20px;
 }
