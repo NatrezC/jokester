@@ -4,6 +4,7 @@ const router = express.Router()
 const db = require('../models')
 const { route } = require('./auth')
 
+
 router.post('/', isLoggedIn, (req, res) => {
     db.joke.findOrCreate({
         where: { setup: req.body.setup, punchline: req.body.punchline},

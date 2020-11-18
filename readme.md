@@ -1,4 +1,4 @@
-# Express Auth Boilerplate
+# BEFORE RUNNING App
 
 * create a node app
 * .gitignore

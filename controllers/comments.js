@@ -2,8 +2,9 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const { route } = require('./auth')
+const isLoggedIn = require('../middleware/isLoggedIn')
 
-router.get('/:jokeId', (req, res) => {
+router.get('/:jokeId', isLoggedIn, (req, res) => {
     db.userjoke.create({
         where: {userId: req.user.id, jokeId: req.params.jokeId}
     })
