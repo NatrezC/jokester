@@ -5,7 +5,7 @@ const { route } = require('./auth')
 const isLoggedIn = require('../middleware/isLoggedIn')
 
 router.get('/:jokeId', isLoggedIn, (req, res) => {
-    db.userjoke.create({
+    db.userjoke.findOne({
         where: {userId: req.user.id, jokeId: req.params.jokeId}
     })
     .then(foundComment => {

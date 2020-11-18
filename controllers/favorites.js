@@ -48,9 +48,9 @@ router.delete('/:id', isLoggedIn, (req, res) => {
 })
 
 router.put('/:id', isLoggedIn, (req, res) => {
-    db.userjoke.update({ comment: req.body.comment},
-        {
-            where: { userId: req.user.id, jokeId: req.params.id }
+    db.userjoke.update(
+        {comment: req.body.comment},
+        {where: { userId: req.user.id, jokeId: req.params.id }
         }).then(newComment => {
             console.log("Comment here===>>>>", newComment)
             res.redirect(`/comments/${req.params.id}`)

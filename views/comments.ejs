@@ -1,8 +1,9 @@
 
-
-<p><%=comment.comment%></p>
-<p><%=comment.createdAt%></p>
-<p><%=comment.updatedAT%></p>
+<% comment.forEach(comment =>{ %>
+    <p><%=comment.comment%></p>
+    <p><%=comment.createdAt%></p>
+    <p><%=comment.updatedAT%></p>
+<% }) %>
 
 
 
