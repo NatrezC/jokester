@@ -29,6 +29,7 @@ https://lucid.app/lucidchart/invitations/accept/a17bb8f3-53b7-4e7a-8def-59235a02
 2. Install dependencies ---> npm i
 
 3. Create a `config.json` with the following code:
+```
 {
   "development": {
     "username": "postgres",
@@ -52,11 +53,11 @@ https://lucid.app/lucidchart/invitations/accept/a17bb8f3-53b7-4e7a-8def-59235a02
     "dialect": "postgres"
   }
 }
+```
+1. Create a database --> sequelize db:create dbName
 
-4. Create a database --> sequelize db:create dbName
+2. Migrate the `user` model to your database ---> sequelize db:migrate
 
-5. Migrate the `user` model to your database ---> sequelize db:migrate
+3. Add `SESSION_SECRET` and `PORT` environment variables in a `.env` file
 
-6. Add `SESSION_SECRET` and `PORT` environment variables in a `.env` file
-
-7. Run `nodemon` to start up app
+4. Run `nodemon` to start up app
