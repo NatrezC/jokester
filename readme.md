@@ -1,3 +1,18 @@
+# The Jokester APP
+link: https://jokesterapp.herokuapp.com
+
+## User Story
+* User will be able to sign in and make themselves a profile
+* User will be able to click to view different random jokes
+* User can save any random joke of their liking
+* They will also be able to comment on any of the jokes that they favorited.
+
+### Wireframe for jokester
+https://lucid.app/lucidchart/invitations/accept/309fd4e5-8d0b-47f8-94a3-2b1d23b4bb90
+
+### ERD for jokester app
+https://lucid.app/lucidchart/invitations/accept/a17bb8f3-53b7-4e7a-8def-59235a0294de
+
 # BEFORE RUNNING App
 
 * create a node app
@@ -13,11 +28,11 @@
 
 2. Install dependencies ---> npm i
 
-3. Creae a `config.json` with the following code:
+3. Create a `config.json` with the following code:
 {
   "development": {
     "username": "postgres",
-    "password": "Tdadon96",
+    "password": "password",
     "database": "db name",
     "host": "127.0.0.1",
     "dialect": "postgres"
